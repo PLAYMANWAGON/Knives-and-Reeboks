@@ -1,0 +1,13 @@
+C:\Users\aironas.keturka\Documents\Mokykliniai Sudai\Gaming\Genomgång-slump\slump\bin\Debug\netcoreapp3.1\slump.exe
+C:\Users\aironas.keturka\Documents\Mokykliniai Sudai\Gaming\Genomgång-slump\slump\bin\Debug\netcoreapp3.1\slump.deps.json
+C:\Users\aironas.keturka\Documents\Mokykliniai Sudai\Gaming\Genomgång-slump\slump\bin\Debug\netcoreapp3.1\slump.runtimeconfig.json
+C:\Users\aironas.keturka\Documents\Mokykliniai Sudai\Gaming\Genomgång-slump\slump\bin\Debug\netcoreapp3.1\slump.runtimeconfig.dev.json
+C:\Users\aironas.keturka\Documents\Mokykliniai Sudai\Gaming\Genomgång-slump\slump\bin\Debug\netcoreapp3.1\slump.dll
+C:\Users\aironas.keturka\Documents\Mokykliniai Sudai\Gaming\Genomgång-slump\slump\bin\Debug\netcoreapp3.1\slump.pdb
+C:\Users\aironas.keturka\Documents\Mokykliniai Sudai\Gaming\Genomgång-slump\slump\obj\Debug\netcoreapp3.1\slump.csprojAssemblyReference.cache
+C:\Users\aironas.keturka\Documents\Mokykliniai Sudai\Gaming\Genomgång-slump\slump\obj\Debug\netcoreapp3.1\slump.AssemblyInfoInputs.cache
+C:\Users\aironas.keturka\Documents\Mokykliniai Sudai\Gaming\Genomgång-slump\slump\obj\Debug\netcoreapp3.1\slump.AssemblyInfo.cs
+C:\Users\aironas.keturka\Documents\Mokykliniai Sudai\Gaming\Genomgång-slump\slump\obj\Debug\netcoreapp3.1\slump.csproj.CoreCompileInputs.cache
+C:\Users\aironas.keturka\Documents\Mokykliniai Sudai\Gaming\Genomgång-slump\slump\obj\Debug\netcoreapp3.1\slump.dll
+C:\Users\aironas.keturka\Documents\Mokykliniai Sudai\Gaming\Genomgång-slump\slump\obj\Debug\netcoreapp3.1\slump.pdb
+C:\Users\aironas.keturka\Documents\Mokykliniai Sudai\Gaming\Genomgång-slump\slump\obj\Debug\netcoreapp3.1\slump.genruntimeconfig.cache
