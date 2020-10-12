@@ -14,17 +14,17 @@ namespace slump
 
             Random generator = new Random();
 
-            bool alive = false;
-
             bool pturn = false;
 
             string story = "";
 
             string name = "";
 
-            int devart = 1000;
+            int devart = 500;
 
-            int player = 1000;
+            int player = 500;
+
+            bool fight = false;
 
 
             Console.WriteLine("Write your name:");
@@ -52,31 +52,80 @@ namespace slump
             Console.ReadLine();
             Console.Clear();
 
-            alive = true;
-
             pturn = true;
 
+            fight = true;
 
-            while (pturn)
+
+
+            while (fight)
             {
+                while (pturn)
+                {
 
-                int dmg = generator.Next(100);
+                    int dmg = generator.Next(101);
 
-                Console.WriteLine("You deal " + dmg % 100 + " Physical Damage and " + dmg % 10 + " Rage Damage.");
+                    int sum = dmg % 100 + dmg % 10;
 
-                /* SKRIV EN KOD SOM BERÄKNAR DAMAGE OVAN*/
+                    Console.WriteLine("You deal " + dmg % 100 + " Physical Damage and " + dmg % 10 + " Gamer Damage.");
 
-                Console.WriteLine("Enemy's health: " + devart);
+                    Console.WriteLine("A total of: " + sum + " damage.");
 
-                pturn = false;
+                    devart = devart - sum;
 
-                Console.ReadLine();
+                    Console.WriteLine("Enemy's health: " + devart);
+
+                    pturn = false;
+
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+
+                while (!pturn)
+                {
+
+                    int dmg = generator.Next(101);
+
+                    int sum = dmg % 100 + dmg % 10;
+
+                    Console.WriteLine("DeviantArt deals " + dmg % 100 + " Physical Damage and " + dmg % 10 + " Cringe Damage.");
+
+                    Console.WriteLine("A total of: " + sum + " damage.");
+
+                    player = player - sum;
+
+                    Console.WriteLine("Your health: " + player);
+
+                    pturn = true;
+
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+
+                if (player <= 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("You died, ok.");
+                    Console.ReadLine();
+                    fight = false;
+                }
+
+                if (devart <= 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("DeviantArt is dead, nice.");
+                    Console.ReadLine();
+                    fight = false;
+                }
+
             }
 
-            if (alive == false)
-            {
-                Console.WriteLine("You died, sucks to be you!");
-            }
+            Console.Clear();
+
+            Console.WriteLine("THe End");
+
+            Console.ReadLine();
+
         }
     }
 }
