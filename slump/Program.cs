@@ -20,11 +20,15 @@ namespace slump
 
             string name = "";
 
-            int devart = 500;
+            string enemy = "";
 
-            int player = 500;
+            int enehealth = 300;
+
+            int player = 300;
 
             bool fight = false;
+
+            bool allalive = false;
 
 
             Console.WriteLine("Write your name:");
@@ -46,7 +50,35 @@ namespace slump
                 Console.ReadLine();
             }
 
-            Console.WriteLine(name + " VS. DeviantArt");
+            int enemygen = generator.Next(4);
+
+            if (enemygen == 0)
+            {
+
+                enemy = "Burger";
+
+            }
+
+            if (enemygen == 1)
+            {
+
+                enemy = "Sir Crackpipe CCXVI";
+            }
+
+            if (enemygen == 2)
+            {
+
+                enemy = "Katia Mannagan from famous webcomic \"Prequel -or- Making A Cat Cry: The Adventure\"";
+
+            }
+
+            if (enemygen == 3)
+            {
+
+                enemy = "Famous japanese vocalist, DJ and visual artist Yamataka Eye";
+            }
+
+            Console.WriteLine(name + " VS. " + enemy);
             Console.ReadLine();
             Console.WriteLine("FIGHT!");
             Console.ReadLine();
@@ -56,50 +88,103 @@ namespace slump
 
             fight = true;
 
+            allalive = true;
+
 
 
             while (fight)
             {
-                while (pturn)
+
+                while (allalive)
                 {
 
-                    int dmg = generator.Next(101);
 
-                    int sum = dmg % 100 + dmg % 10;
 
-                    Console.WriteLine("You deal " + dmg % 100 + " Physical Damage and " + dmg % 10 + " Gamer Damage.");
+                    while (pturn)
+                    {
 
-                    Console.WriteLine("A total of: " + sum + " damage.");
+                        int dmg = generator.Next(101);
 
-                    devart = devart - sum;
+                        int sum = dmg % 100 + dmg % 5;
 
-                    Console.WriteLine("Enemy's health: " + devart);
+                        Console.WriteLine("You deal " + dmg % 100 + " Physical Damage and " + dmg % 5 + " Gamer Damage.");
 
-                    pturn = false;
+                        if (sum >= 95)
+                        {
+                            int crt = generator.Next(25, 50);
+                            Console.WriteLine("CRITICAL HIT!");
+                            Console.WriteLine("You deal additional " + crt + " damage!");
+                            sum = sum + crt;
+                        }
 
-                    Console.ReadLine();
-                    Console.Clear();
-                }
+                        Console.WriteLine("A total of: " + sum + " damage.");
 
-                while (!pturn)
-                {
+                        if (sum == 0)
+                        {
+                            Console.WriteLine("You missed... damn, you suck :/");
+                        }
 
-                    int dmg = generator.Next(101);
+                        enehealth = enehealth - sum;
 
-                    int sum = dmg % 100 + dmg % 10;
+                        Console.WriteLine(enemy + "'s health: " + enehealth);
 
-                    Console.WriteLine("DeviantArt deals " + dmg % 100 + " Physical Damage and " + dmg % 10 + " Cringe Damage.");
+                        pturn = false;
 
-                    Console.WriteLine("A total of: " + sum + " damage.");
+                        Console.ReadLine();
+                        Console.Clear();
 
-                    player = player - sum;
+                        if (enehealth <= 0)
+                        {
+                            allalive = false;
+                        }
 
-                    Console.WriteLine("Your health: " + player);
+                        break;
 
-                    pturn = true;
+                    }
 
-                    Console.ReadLine();
-                    Console.Clear();
+                    while (!pturn)
+                    {
+
+                        int dmg = generator.Next(101);
+
+                        int sum = dmg % 100 + dmg % 5;
+
+                        Console.WriteLine(enemy + " deals " + dmg % 100 + " Physical Damage and " + dmg % 5 + " Cringe Damage.");
+
+                        if (sum >= 95)
+                        {
+                            int crt = generator.Next(25, 50);
+                            Console.WriteLine("CRITICAL HIT!");
+                            Console.WriteLine(enemy + " deals additional " + crt + " damage.");
+                            sum = sum + crt;
+                        }
+
+                        Console.WriteLine("A total of: " + sum + " damage.");
+
+                        if (sum == 0)
+                        {
+                            Console.WriteLine(enemy + " missed... haha, loser.");
+                        }
+
+                        player = player - sum;
+
+                        Console.WriteLine("Your health: " + player);
+
+                        pturn = true;
+
+                        Console.ReadLine();
+                        Console.Clear();
+
+                        if (player <= 0)
+                        {
+                            allalive = false;
+
+                        }
+
+                        break;
+
+                    }
+
                 }
 
                 if (player <= 0)
@@ -110,13 +195,15 @@ namespace slump
                     fight = false;
                 }
 
-                if (devart <= 0)
+                if (enehealth <= 0)
                 {
                     Console.Clear();
-                    Console.WriteLine("DeviantArt is dead, nice.");
+                    Console.WriteLine(enemy + " is dead, nice.");
                     Console.ReadLine();
                     fight = false;
                 }
+
+
 
             }
 
